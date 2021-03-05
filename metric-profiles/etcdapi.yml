@@ -82,6 +82,11 @@ metrics:
     metricName: etcdVersion
     instant: true
 
+  - query: rate(etcd_server_slow_apply_total[2m])
+    metricName: etcdSlowApply
+
+  - query: rate(etcd_server_slow_read_indexes_total[2m])
+    metricName: etcdSlowRead
 
 # API server
 
