@@ -63,10 +63,10 @@ metrics:
   - query: etcd_server_is_leader > 0
     metricName: etcdServerIsLeader
 
-  - query: histogram_quantile(0.99, rate(etcd_disk_backend_commit_duration_seconds_bucket[2m]))
+  - query: histogram_quantile(0.99, irate(etcd_disk_backend_commit_duration_seconds_bucket[2m]))
     metricName: 99thEtcdDiskBackendCommitDurationSeconds
 
-  - query: histogram_quantile(0.99, rate(etcd_disk_wal_fsync_duration_seconds_bucket[2m]))
+  - query: histogram_quantile(0.99, irate(etcd_disk_wal_fsync_duration_seconds_bucket[2m]))
     metricName: 99thEtcdDiskWalFsyncDurationSeconds
 
   - query: histogram_quantile(0.99, rate(etcd_network_peer_round_trip_time_seconds_bucket[5m]))
@@ -82,10 +82,10 @@ metrics:
     metricName: etcdVersion
     instant: true
 
-  - query: rate(etcd_server_slow_apply_total[2m])
+  - query: deleta(etcd_server_slow_apply_total[2m])
     metricName: etcdSlowApply
 
-  - query: rate(etcd_server_slow_read_indexes_total[2m])
+  - query: delta(etcd_server_slow_read_indexes_total[2m])
     metricName: etcdSlowRead
 
 # API server
