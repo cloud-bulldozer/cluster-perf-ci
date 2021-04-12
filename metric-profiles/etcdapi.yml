@@ -82,7 +82,7 @@ metrics:
     metricName: etcdVersion
     instant: true
 
-  - query: deleta(etcd_server_slow_apply_total[2m])
+  - query: delta(etcd_server_slow_apply_total[2m])
     metricName: etcdSlowApply
 
   - query: delta(etcd_server_slow_read_indexes_total[2m])
