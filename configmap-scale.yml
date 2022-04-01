@@ -18,7 +18,7 @@ jobs:
     podWait: false
     verifyObjects: false
     objects:
-    - objectTemplate: "https://raw.githubusercontent.com/cloud-bulldozer/cluster-perf-ci/master/templates/configmap-scale/configmap.yml"
+    - objectTemplate: "templates/configmap-scale/configmap.yml"
       replicas: 9000
       inputVars:
         data_length: 2000
@@ -38,7 +38,7 @@ jobs:
     namespacedIterations: false
     verifyObjects: false
     objects:
-    - objectTemplate: "https://raw.githubusercontent.com/cloud-bulldozer/cluster-perf-ci/master/templates/configmap-scale/configmap.yml"
+    - objectTemplate: "templates/configmap-scale/configmap.yml"
       replicas: 12600
       inputVars:
         data_length: 3000
@@ -58,7 +58,7 @@ jobs:
     namespacedIterations: false
     verifyObjects: false
     objects:
-    - objectTemplate: "https://raw.githubusercontent.com/cloud-bulldozer/cluster-perf-ci/master/templates/configmap-scale/configmap.yml"
+    - objectTemplate: "templates/configmap-scale/configmap.yml"
       replicas: 16200
       inputVars:
         data_length: 4000
