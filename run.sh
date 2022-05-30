@@ -3,7 +3,7 @@
 set -ex
 
 prom_url=https://$(oc get route -n openshift-monitoring prometheus-k8s  -o jsonpath="{.spec.host}")
-token=$(oc sa get-token -n openshift-monitoring prometheus-k8s)
+token=$(oc sa get-token -n openshift-monitoring prometheus-k8s || oc sa new-token -n openshift-monitoring prometheus-k8s)
 
 curl -L https://github.com/cloud-bulldozer/kube-burner/releases/download/v0.15.4/kube-burner-0.15.4-Linux-x86_64.tar.gz | tar xz
 # Trigger workload
