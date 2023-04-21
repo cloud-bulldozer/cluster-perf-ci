@@ -12,7 +12,7 @@
   description: 2 minutes avg. etcd network peer round trip on {{$labels.pod}} higher than 100ms. {{$value}}s
   severity: warning
 
-- expr: increase(etcd_server_leader_changes_seen_total[2m]) > 0
+- expr: avg(changes(etcd_server_is_leader[10m])) > 5
   description: etcd leader changes observed
   severity: error
 
